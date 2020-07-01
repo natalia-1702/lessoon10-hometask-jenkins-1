@@ -1,0 +1,13 @@
+#parametr version=1.0
+
+echo $version
+apt update && apt install docker.io
+systemctl start docker
+ls
+rm -rf Docker-maven-helloworld-lesson6
+git clone https://github.com/natalya-limareva/Docker-maven-helloworld-lesson6.git
+ls
+docker build -t 17021993/javaapp:$version ./Docker-maven-helloworld-lesson6/
+docker images | grep javaapp
+docker login -u 17021993 -p 17021993Nv
+docker push 17021993/javaapp:$version

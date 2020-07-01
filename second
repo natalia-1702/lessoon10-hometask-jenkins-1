@@ -1,0 +1,7 @@
+#parametr version=1.1
+echo $version
+
+apt update && apt install docker.io
+docker login -u 17021993 -p 17021993Nv
+docker pull 17021993/javaapp:$version
+docker run -d -p 8080:8080 17021993/javaapp:$version
